@@ -59,6 +59,8 @@ export const getStaticPaths = () => {
   return {
     paths: [],
     fallback: 'blocking'
+
+    // fallback: true, false or blocking
   }
 }
 
@@ -80,6 +82,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post
-    }
+    },
+    redirect: 60 * 30, // 30 minutes
   }
 }
